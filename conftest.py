@@ -26,9 +26,6 @@ def browser(request):
         command_executor="http://localhost:4444/wd/hub",
         desired_capabilities=capabilities)
 
-    if browser_name != "chrome" or "firefox" or "opera":
-        raise pytest.UsageError("'--browser_name' should be 'chrome', 'firefox' or 'opera'")
-
     yield browser
     time.sleep(3)
     browser.quit()
